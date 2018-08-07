@@ -3,15 +3,33 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<div id="title">
 	<title>soprts</title>
+	</div>
 	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">
+	<link rel="stylesheet" type="img" href="{{url_for('static',filename='as.jpg')}}">
 
 </head>
+<div id="content">
 <body>
 <h1>My Favorite So-prt is Swimming</h1>
+<img src="as.jpg">
 <p>Just beacause</p>
-<ul>
-	<li></li>
-</ul>
+{%if likes_same_sport == True%}
+	<div class="lists">
+	<ul>
+		{%for fav_players in fav_players %}
+		<li>{{fav_players}}</li>
+		{% endfor %}
+		
+	</ul>
+	</div>
+{%else%}
+	<div class="stupidity">
+	<H2>WHY?AGAIN?!!!!</H2>
+	<p>BECAUUUUUSSSSSSSSEEE 5ALAAAASS!!@#$$#$%#</p>
+	</div>
+{%endif%}
 </body>
+</div>
 </html>
